@@ -74,6 +74,7 @@ export const createNewProject = async (
 
   if (imageUrl.url) {
     client.setHeader('Authorization', `Bearer ${token}`);
+
     const variables = {
       input: {
         ...form,
@@ -83,6 +84,7 @@ export const createNewProject = async (
         },
       },
     };
+
     return makeGraphQLRequest(createProjectMutation, variables);
   }
 };
